@@ -11,7 +11,6 @@ import sys
 
 
 async def main():
-    # sys.stdout = open(file_path, 'a')
     candle_list = []
     async with websockets.connect("wss://stream.binance.com:9443/ws") as websocket:
         await websocket.send(json.dumps({"method": "SUBSCRIBE", "params": ["btcusdt@kline_1m"], "id": 1}))
